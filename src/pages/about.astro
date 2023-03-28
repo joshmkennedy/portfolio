@@ -1,0 +1,52 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="About | Josh Kennedy"
+			description="A Learning Enthusiast"
+		/>
+		<style lang="scss">
+			figure{
+				margin:0;	
+				margin-block-end:2.5rem;
+			}
+			figure img{
+				display:block;
+				width:100%;
+				/* margin-inline:auto; */
+				max-width:20em;
+			}
+			.content p {
+				margin-inline:auto;
+				font-size:var(--f-u2);
+				line-height:2.5;
+				max-width:70ch;
+			}
+
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper wrapper__readable">
+			<h1 class="title mt4 mb4">About Me.</h1>
+			<figure><img src="/assets/josh.png" /></figure>
+			<div class="content">
+				<p>I’m Josh, and this is my website. I am a developer who is constantly growing, and learning.I'm from Lynchburg, Virginia. In addition to being a wonderful developer, I am a husband and a super fun dad
+				to two kids. When Im not hanging out with my family I'm usually tinkering with a 3d printer, watching old
+				movies, or coding something awesome.</p>
+				<p>I'm knowledgable about all things web. My focus tends to be on the frontend. I build accessible, functional, and beautiful sites with html, css, and javascript typescript (when necessary 😜). I also build cli's, scripts, and neovim plugins, in languages like go, python, and lua.
+				I love trying out the latest frontend framework, or learning a new language, by improving some aspect of my
+				workflow.</p>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
+
+
