@@ -6,7 +6,7 @@ import Nav from '../components/Nav/index.jsx';
 import Footer from '../components/Footer/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 import InverseText from "../components/InverseText/index.jsx";
-
+import * as socials from "./sitemetadata/socials.json"
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob('./project/**/*.md');
@@ -134,7 +134,7 @@ const featuredProject = projects[0]
 		</style>
 	</head>
 	<body>
-		<Nav />
+		<Nav socials={socials} />
 		<header class="hero">
 			<img
 				width="1600"
