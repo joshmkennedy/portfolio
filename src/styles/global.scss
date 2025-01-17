@@ -1,6 +1,19 @@
 // Tokens
 :root {
+  body {
+    box-sizing: border-box;
+
+    *,
+    *:after,
+    *:before {
+      box-sizing: inherit;
+    }
+  }
+
   // (c)olor
+  --purple:#5635EA;
+  --green:#31D3A0;
+  --yellow:#DDD970;
   --c-black: #05091e;
   --c-blue: #46b4ff;
   --c-gray: #90aab7;
@@ -60,7 +73,18 @@
 body {
   margin: 0;
   color: var(--t-fg);
-  font-family: "Inter", "system-ui", sans-serif;
+  font-family: "Operator Mono";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  letter-spacing:-.5px;
+  line-height:1.1;
 }
 
 * {
@@ -73,7 +97,7 @@ img {
 }
 
 a {
-  color: var(--t-active);
+  color: var(--purple);
 }
 
 h1 {
@@ -84,11 +108,14 @@ h1 {
 
 // color
 $colors: "black", "blue", "white";
+
 @each $color in $colors {
+
   // text color
   .tc-#{$color} {
     color: var(--c-#{color});
   }
+
   // background color
   .bg-#{$color} {
     background-color: var(--c-#{color});
@@ -100,6 +127,7 @@ $colors: "black", "blue", "white";
   .f-u#{$i} {
     font-size: var(--f-u#{$i});
   }
+
   .f-d#{$i} {
     font-size: var(--f-d#{$i});
   }
@@ -110,30 +138,39 @@ $colors: "black", "blue", "white";
   .ma#{$i} {
     margin: #{0.5 * $i}rem;
   }
+
   .mt#{$i} {
     margin-top: #{0.5 * $i}rem;
   }
+
   .mr#{$i} {
     margin-right: #{0.5 * $i}rem;
   }
+
   .mb#{$i} {
     margin-bottom: #{0.5 * $i}rem;
   }
+
   .ml#{$i} {
     margin-left: #{0.5 * $i}rem;
   }
+
   .pa#{$i} {
     padding: #{0.5 * $i}rem;
   }
+
   .pt#{$i} {
     padding-top: #{0.5 * $i}rem;
   }
+
   .pr#{$i} {
     padding-right: #{0.5 * $i}rem;
   }
+
   .pb#{$i} {
     padding-bottom: #{0.5 * $i}rem;
   }
+
   .pl#{$i} {
     padding-left: #{0.5 * $i}rem;
   }
@@ -143,9 +180,11 @@ $colors: "black", "blue", "white";
 .tac {
   text-align: center;
 }
+
 .tal {
   text-align: left;
 }
+
 .tar {
   text-align: right;
 }
@@ -158,6 +197,7 @@ $colors: "black", "blue", "white";
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 .wrapper__readable {
   max-width: 50em;
 }
@@ -165,5 +205,36 @@ $colors: "black", "blue", "white";
 @media (min-width: 750px) {
   .mobile-only {
     display: none;
+  }
+}
+
+svg {
+  width: 100%;
+}
+
+.bah {
+  font-size: 80px;
+  max-width:10ch;
+  @media(max-width:500px){
+    font-size: 48px;
+    max-width:100%;
+  }
+}
+
+.btn {
+  display:inline-flex;
+  border-radius:.15em;
+  width:fit-content;
+  line-height:1;
+  white-space:nowrap;
+  padding:.5em 1em;
+  text-decoration: none;
+  color:var(--text-color, white);
+  background:var(--bg-color, var(--purple));
+  border:1px solid var(--border-color, transparent);
+  &:hover{
+    color:var(--text-h-color, white);
+    background:var(--bg-h-color, var(--green));
+    border:1px solid var(--border-h-color, transparent);
   }
 }

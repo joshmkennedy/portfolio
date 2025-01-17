@@ -1,7 +1,6 @@
 import Styles from "./styles.module.scss";
 
 function Nav({ socials }) {
-	
   return (
     <nav className={Styles.nav}>
       <a className={Styles.logolink} href="/">

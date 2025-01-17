@@ -3,9 +3,13 @@ layout: ../../layouts/project.astro
 title: Interactive Maps
 client: Dan Pink through Out:think Group
 publishDate: 2020-03-02 00:00:00
-img: https://images.unsplash.com/photo-1547234935-80c7145ec969?fit=crop&w=1400&h=700&q=75
+largeFtImg: /assets/projects/interactive-maps-screenshots/large/pod-map-view.webp
+smallFtImg: /assets/projects/interactive-maps-screenshots/small/pod-map-view.webp
+smallImgGallery: /assets/projects/interactive-maps-screenshots/small
+largeImgGallery: /assets/projects/interactive-maps-screenshots/large
 description: |
   An interactive world map that would display user submitted regrets from around the world
+tech: ["react", "typescript", "node"]
 tags:
   - SVG
   - Data visualization

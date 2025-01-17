@@ -1,0 +1,30 @@
+---
+import iconConfig from "../config/techicons.json"
+const {tech} = Astro.props
+---
+
+<style lang="scss">
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+		display:flex;
+		gap:.5em;
+		align-items:center;
+		li{
+			margin:0;
+			display:grid;
+			place-content:center;
+			padding:0;
+			img {
+				width:1em;
+			}
+		}
+	}
+</style>
+
+	<ul>
+		{tech.map((slug)=><li>
+			<img src={iconConfig[slug]} alt={`${slug} logo`} />
+		</li>)}
+	</ul>

@@ -3,9 +3,13 @@ layout: ../../layouts/project.astro
 title: Sendmagnet
 client: Out:think Group
 publishDate: 2020-03-02 00:00:00
-img: https://images.unsplash.com/photo-1547234935-80c7145ec969?fit=crop&w=1400&h=700&q=75
+largeFtImg: /assets/projects/sendmagnet-screenshots/large/campaign-overview.webp
+smallFtImg: /assets/projects/sendmagnet-screenshots/small/campaign-overview.webp
+smallImgGallery: /assets/projects/sendmagnet-screenshots/small
+largeImgGallery: /assets/projects/sendmagnet-screenshots/large
 description: |
   A Saas app that would subscribe users to an email list by email
+tech: ["react", "tailwind", "typescript", "graphql"]
 tags:
   - Wordpress
   - Saas

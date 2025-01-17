@@ -1,0 +1,63 @@
+---
+import IconsTechUsed from "./IconsTechUsed.astro"
+const posts = import.meta.glob('../pages/project/*.md', { eager: true });
+const {slug} = Astro.props
+const selectedPath = Object.keys(posts).find((path)=>path.replace("../pages/project/","") === `${ slug }.md`)
+
+const project = posts[selectedPath]
+---
+
+<style lang="scss">
+	article {
+		border:1px solid #ddd;
+		border-radius:4px;
+		padding:0 1rem 1rem;
+	}
+	img{
+		border-radius:4px;
+		border: 1px solid var(--green);
+	}
+	.icons-wrapper {
+		font-size: 20px;
+		padding-block:.7em;
+	}
+	.title {
+		text-decoration:none;
+		text-shadow:0 2px 4px color-mix(in hsl, var(--purple) 50%, transparent 50%);
+		font-size: 28px;
+		h3{
+			margin:0;
+		}
+	}
+	.desc {
+		margin:0;
+		font-size: 16px;
+		line-height: 1.4;
+		margin-block-end:.25rem;
+	}
+	.flex-col{
+		display:flex;
+		flex-direction:column;
+	}
+	.gap-sm{
+		gap:.8rem;
+	}
+</style>
+
+{project && (
+	<article>
+		<div class="icons-wrapper">
+			<IconsTechUsed tech={project.frontmatter.tech} />
+		</div>
+		<div class="flex-col gap-sm">
+			<a href={project.url}><img src={project.frontmatter.img} alt={`${project.frontmatter.title}'s screenshot`}></a>
+			<a class="title" href={project.url}>
+				<h3>{project.frontmatter.title}</h3>
+			</a>
+			<p class="desc">{project.frontmatter.description}</p>
+			<a href={project.url} class="btn">
+				Learn More
+			</a>
+		</div>
+	</article>
+)}

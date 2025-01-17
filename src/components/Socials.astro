@@ -1,0 +1,55 @@
+---
+import * as socials from "../config/socials.json"
+import XComIcon from "./XCom.astro"
+import GithubIcon from "./GithubIcon.astro"
+import LinkedInIcon from "./LinkedInIcon.astro"
+import MailIcon from "./MailIcon.astro"
+
+const config = [
+	{
+		name:"GitHub",
+		link:socials.platforms.github,
+		icon:GithubIcon,
+	},
+	{
+		name:"X",
+		link:socials.platforms.twitter,
+		icon:XComIcon,
+	},
+	{
+		name:"Email",
+		link:socials.platforms.mail,
+		icon:MailIcon,
+	},
+	{
+		name:"LinkedIn",
+		link:socials.platforms.linkedin,
+		icon:LinkedInIcon,
+	}
+
+]
+---
+<style>
+	.social-icon {
+		max-width:1em;
+		a{
+			color:var(--link-color);
+			&:hover{
+				color:var(--link-h-color);
+			}
+		}
+	}	
+</style>
+{
+	config.map((social)=>{
+	return (
+	<div class={ `social-icon ${social.name} `}>
+			<a href={social.link} title={social.name}>
+				<social.icon/>
+			</a>
+		</div>
+		);
+	})
+}
+
+

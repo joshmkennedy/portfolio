@@ -1,0 +1,7 @@
+{
+	"react":"/assets/react.svg",
+	"graphql":"/assets/graphql.svg",
+	"typescript":"/assets/typescript.svg",
+	"tailwind":"/assets/tailwind.svg",
+	"node":"/assets/node.svg"
+}
