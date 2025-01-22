@@ -3,13 +3,13 @@
 import MainHead from '../components/MainHead.astro';
 import Button from '../components/Button/index.jsx';
 import Footer from '../components/Footer/index.jsx';
-import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 import InverseText from "../components/InverseText/index.jsx";
 import { Image } from 'astro:assets';
 import headshot from "../images/Headshot.png"
 import Socials from "../components/Socials.astro"
 import PurpleRect from "../components/purple-rect.astro"
 import ProjectCard from "../components/ProjectCard.astro"
+import AuthorCarousel from "../components/AuthorCarousel.astro"
 import YellowTriangle from "../components/yellow-triangle.astro"
 
 // Data Fetching: List all Markdown posts in the repo.
@@ -35,15 +35,6 @@ const featuredProject = projects[0]
 				radial-gradient(ellipse at 110% 60%, #5635EA77 0px, transparent 40%),
 				radial-gradient(at 0% 50%, #30D3A077 0px, transparent 60%);
 			}
-
-
-
-			/* .hero { */
-			/* 	display:grid; */
-			/* 	grid-template-columns: 1fr minmax(auto, calc(1100px * .6)) minmax(300px, calc(1100px *.4)) 1fr; */
-			/* 	grid-template-rows:auto auto 1fr; */
-			/* 	gap:1rem; */
-			/* } */
 
 			.hero{
 				position:relative;
@@ -184,6 +175,13 @@ const featuredProject = projects[0]
 					justify-items:space-between;
 				}
 			}
+
+			.authors{
+				padding-block:80px;
+				h3 {
+					font-size: 32px;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -209,15 +207,17 @@ const featuredProject = projects[0]
 
 		</header>
 		<main class="wrapper mt4 mb4">
-				<section class="section">
-					<h2 class="bah">Projects and Client Work</h2>
+				<h2 class="bah">Projects and Client Work</h2>
+				<section class="section" id="projects">
 					<div class="featured-projects three-col">
 						{["sendmagnet", "plandout", "interactive-maps"].map((slug)=>(
 							<ProjectCard slug={slug}/>
 						))}
 					</div>
 				</section>
-				<section class="section">
+				<section class="section authors">
+					<h3 class="tac">Author Sites</h3>
+					<AuthorCarousel />
 				</section>
 		</main>
 		<Footer />

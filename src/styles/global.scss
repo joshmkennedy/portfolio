@@ -238,3 +238,32 @@ svg {
     border:1px solid var(--border-h-color, transparent);
   }
 }
+
+	.authors-carousel .carousel .flickity-viewport{
+		position:relative;
+		&::after, &::before {
+			content:"";position:absolute;
+			width:20%;
+			height:100%;
+			top:0;
+			bottom:0;
+			z-index:1;
+		}
+		&::before {
+			left:0;
+			background:linear-gradient(90deg, white, transparent 33%);
+		}
+		&::after {
+			right:0;
+			background:linear-gradient(-90deg, white, transparent 33%);
+		}
+	}
+  .authors-carousel .carousel .dot {
+    background:var(--green);
+  }
+	button.flickity-button {
+    color:var(--green);
+    /* background:var(--green); */
+		z-index:99;
+	}
+
