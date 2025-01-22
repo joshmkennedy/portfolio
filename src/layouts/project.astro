@@ -14,6 +14,11 @@ const { content } = Astro.props;
 		<style lang="scss">
 			.hero {
 				padding: 8rem;
+				padding-bottom:8vw;
+				@media(max-width:700px){
+					padding:4rem 1rem;
+					padding-bottom: 2vw;
+				}
 				display: flex;
 				background-color: #eee;
 				background-repeat: no-repeat;
@@ -36,11 +41,17 @@ const { content } = Astro.props;
 				font-weight: 900;
 				text-transform: uppercase;
 				letter-spacing: 0.0625em;
+				text-align:center;
+				@media(max-width:600px){
+					margin-bottom: .2em;
+					font-size: var(--f-u8);
+				}
 			}
 			.desc {
 				font-size: 24px;
 				max-width:50ch;
 				text-align: center;
+				margin-block:0;
 				margin-bottom:2em;
 				color:black;
 			}
@@ -52,7 +63,7 @@ const { content } = Astro.props;
 				margin-inline:auto;
 				border-radius:1em;
 				box-shadow:0 4px 10px color-mix(in hsl, var(--purple) 20%, transparent 80%);
-				margin-top:-10vw;
+				margin-top:-7vw;
 				img {
 					border-radius:8px; 
 				}

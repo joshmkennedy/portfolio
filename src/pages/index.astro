@@ -145,8 +145,13 @@ const featuredProject = projects[0]
 				padding-bottom:300px;
 			}
 			.shapes{
+				overflow:hidden;
 				position:absolute;	
 				inset:0;
+				& > * {
+					will-change:transform;
+					animation: floating 1s ease-in-out var(--delay, 0s) alternate infinite;
+				}
 			}
 			.rect {
 				position:absolute;
@@ -182,15 +187,31 @@ const featuredProject = projects[0]
 					font-size: 32px;
 				}
 			}
+			@keyframes floating {
+				from {
+					//up
+					transform:
+						translateY(calc(var(--i, 1) * 1%))
+						scale(calc((var(--i,1) * -.02) + 1));
+					filter:drop-shadow(0 10px 9px var(--ds-color, gray));
+				}
+				to {
+						//down
+					transform:
+						translateY(calc(var(--i, 1) * -1%))
+						scale(1);
+					filter:drop-shadow(0 1px 1px var(--ds-color, gray));
+				}
+			}
 		</style>
 	</head>
 	<body>
 		<header class="hero mesh-gradient">
 			<div class="shapes">
-				<div class="rect">
+				<div class="rect" style="--i:-1; --delay:-.5s; --ds-color:#5034CD55;">
 			<PurpleRect />
 			</div>
-			<div class="triangle">
+			<div class="triangle" style="--i:-1;">
 			<YellowTriangle />
 			</div>
 			</div>
