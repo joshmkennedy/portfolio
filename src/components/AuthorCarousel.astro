@@ -1,0 +1,50 @@
+---
+import AuthorCard from "./AuthorCard.astro"
+const authors = Object.values(import.meta.glob('../pages/clients/*.md', { eager:
+true }));
+console.log(authors)
+---
+
+<style lang="scss">
+
+	.authors-carousel .carousel {
+			gap:1em;
+			list-style:none;
+			margin:0;
+			padding:0;
+
+		li {
+			transition:opacity 200ms linear;
+			z-index:0;
+			opacity:.5;
+			width:66%;
+			margin-right:1em;
+			&.is-selected {
+				transition:opacity 100ms linear 100ms;
+				z-index:222;
+				opacity:1;
+			}
+		}
+	}
+</style>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+<div class="authors-carousel">
+	<ul class="carousel">
+		{authors.map((author, i)=>(<li id={author.frontmatter.author}>
+			<div><AuthorCard author={author}/></div>
+		</li>))}
+	</ul>
+</div>
+<script>
+	window.addEventListener("DOMContentLoaded", ()=>{
+		new window.Flickity(document.querySelector(".authors-carousel .carousel"), {
+				contain: true,
+				pageDots: true,
+				cellAlign: "center",
+				wrapAround: true,
+			})
+	})
+</script>
