@@ -3,8 +3,8 @@ layout: ../../layouts/project.astro
 title: Sendmagnet
 client: Out:think Group
 publishDate: 2020-03-02 00:00:00
-largeFtImg: /assets/projects/sendmagnet-screenshots/large/campaign-overview.webp
-smallFtImg: /assets/projects/sendmagnet-screenshots/small/campaign-overview.webp
+largeFtImg: /assets/projects/sendmagnet-screenshots/large/sendmagnet-campaign-overview.webp
+smallFtImg: /assets/projects/sendmagnet-screenshots/small/sendmagnet-campaign-overview.webp
 smallImgGallery: /assets/projects/sendmagnet-screenshots/small
 largeImgGallery: /assets/projects/sendmagnet-screenshots/large
 description: |
