@@ -15,6 +15,7 @@
     "sass": "^1.83.4"
   },
   "dependencies": {
+    "image-uploader-astro-toolbar-integration": "^1.0.0",
     "preact": "^10.25.4",
     "sharp": "^0.33.5"
   }
