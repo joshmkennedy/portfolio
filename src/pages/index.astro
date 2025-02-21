@@ -147,10 +147,14 @@ const featuredProject = projects[0]
 			.shapes{
 				overflow:hidden;
 				position:absolute;	
+				perspective: 900px;
 				inset:0;
 				& > * {
+					perspective: 1500px;
 					will-change:transform;
-					animation: floating 1s ease-in-out var(--delay, 0s) alternate infinite;
+					animation: floating 2s cubic-bezier(.5, 0, .5, 1) var(--delay, 0s) alternate infinite;
+					transform-style: preserve-3d;
+					transform-origin: center;
 				}
 			}
 			.rect {
@@ -161,14 +165,20 @@ const featuredProject = projects[0]
 				bottom:0%;
 			}
 			.triangle {
-				max-width:270px;
-				position:absolute;
-				left:0;
-				bottom:25%;
+				width: 100%;
+				max-width: 450px;
+				position: absolute;
+				left: -8%;
+				bottom: 8%;
+
+				@media(max-width:800px){
+					bottom:20%;
+					max-width:350px;
+				}
 				@media(max-width:600px){
 					bottom:20%;
-					max-width:200px;
-					left:-20%;
+					max-width:350px;
+					left:-40%;
 				}
 			}
 
@@ -190,17 +200,16 @@ const featuredProject = projects[0]
 			@keyframes floating {
 				from {
 					//up
-					transform:
-						translateY(calc(var(--i, 1) * 1%))
-						scale(calc((var(--i,1) * -.02) + 1));
+					transform: translateY(calc(var(--i, 1) * 3%)) scale(calc((var(--i,1) * -.03) + 1));
 					filter:drop-shadow(0 10px 9px var(--ds-color, gray));
 				}
-				to {
-						//down
-					transform:
-						translateY(calc(var(--i, 1) * -1%))
-						scale(1);
-					filter:drop-shadow(0 1px 1px var(--ds-color, gray));
+				50%{
+					rotate:.25 .5 .75 3deg;
+				}
+				to{
+					//down
+					transform: translateY(calc(var(--i, 1) * -1%)) scale(1);
+					filter:drop-shadow(0 0px 0px 1px var(--ds-color, gray));
 				}
 			}
 		</style>
@@ -208,12 +217,12 @@ const featuredProject = projects[0]
 	<body>
 		<header class="hero mesh-gradient">
 			<div class="shapes">
-				<div class="rect" style="--i:-1; --delay:-.5s; --ds-color:#5034CD55;">
-			<PurpleRect />
-			</div>
-			<div class="triangle" style="--i:-1;">
-			<YellowTriangle />
-			</div>
+				<div class="rect" style="--i:-1; --delay:-1.33s; --ds-color:#5034CD55;">
+					<PurpleRect />
+				</div>
+				<div class="triangle" style="--i:-1; --ds-color:#99942655;">
+					<YellowTriangle />
+				</div>
 			</div>
 			<div class="left">
 				<h1>Josh<br/> Kennedy</h1>
